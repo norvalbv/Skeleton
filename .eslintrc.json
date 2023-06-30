@@ -1,13 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
-    "sourceType": "module"
+    "project": "./tsconfig.json"
   },
   "env": {
     "node": true
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "root": true,
+  "plugins": ["react", "@typescript-eslint", "custom-rules"],
   "extends": [
     "airbnb",
     "airbnb-typescript",
@@ -16,7 +16,8 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "settings": {
     "react": {
@@ -24,6 +25,16 @@
     }
   },
   "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "src/globals.d.ts",
+          "**/*.config.{js,ts}" // configs
+        ],
+        "optionalDependencies": false
+      }
+    ],
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/unbound-method": "error",
@@ -52,10 +63,7 @@
     "no-unused-vars": "off",
     "consistent-return": "off",
     "import/prefer-default-export": "off",
-    "react/function-component-definition": [
-      "off",
-      { "namedComponents": "arrow-function" }
-    ],
+    "react/function-component-definition": ["off", { "namedComponents": "arrow-function" }],
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "react/require-default-props": "off",
@@ -67,6 +75,9 @@
     "@typescript-eslint/no-shadow": "off",
     "no-nested-ternary": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "custom-rules/no-px-in-tailwind": "warn",
+    "@typescript-eslint/prefer-namespace-keyword": "off",
+    "@typescript-eslint/no-namespace": "off"
   }
 }
