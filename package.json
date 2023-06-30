@@ -1,5 +1,5 @@
 {
-  "name": "management-portal-webapp",
+  "name": "application",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -63,5 +63,5 @@
       "yarn lint"
     ]
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.6.0"
 }
