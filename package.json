@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "postinstall": "cd ../../../ && husky install services/management-portal/management-portal-web-app/.husky",
+    "postinstall": "husky install",
     "lint": "eslint src",
     "format:check": "prettier --check src",
     "format:fix": "prettier --write src"
