@@ -64,5 +64,5 @@
       "yarn lint"
     ]
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@4.1.0"
 }
